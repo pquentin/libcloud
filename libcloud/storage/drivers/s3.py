@@ -314,16 +314,11 @@ class BaseS3StorageDriver(StorageDriver):
                 yield obj
 
     def get_container(self, container_name):
-        try:
-            response = self.connection.request('/%s' % container_name,
-                                               method='HEAD')
-            if response.status == httplib.NOT_FOUND:
-                raise ContainerDoesNotExistError(value=None, driver=self,
-                                                 container_name=container_name)
-        except InvalidCredsError:
-            # This just means the user doesn't have IAM permissions to do a
-            # HEAD request but other requests might work.
-            pass
+        response = self.connection.request('/%s' % container_name,
+                                           method='HEAD')
+        if response.status == httplib.NOT_FOUND:
+            raise ContainerDoesNotExistError(value=None, driver=self,
+                                             container_name=container_name)
         return Container(name=container_name, extra=None, driver=self)
 
     def get_object(self, container_name, object_name):
