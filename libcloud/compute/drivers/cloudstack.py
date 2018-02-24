@@ -4053,7 +4053,7 @@ class CloudStackNodeDriver(CloudStackDriverMixIn, NodeDriver):
         List the available networks
 
         :param      vm: Node Object
-        :type       vm: :class:`CloudStackNode
+        :type       vm: :class:`CloudStackNode`
 
         :rtype ``list`` of :class:`CloudStackNic`
         """
