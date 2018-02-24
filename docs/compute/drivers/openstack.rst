@@ -144,15 +144,7 @@ to specify a tenant (``ex_tenant_name`` argument).
 .. literalinclude:: /examples/compute/openstack/tenant_name.py
    :language: python
 
-6. HP Cloud (www.hpcloud.com)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Connecting to HP Cloud US West and US East (OpenStack Havana).
-
-.. literalinclude:: /examples/compute/openstack/hpcloud.py
-   :language: python
-
-7. Using Cloud-Init with OpenStack
+6. Using Cloud-Init with OpenStack
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This example shows how to use cloud-init using the ``ex_config_drive`` and
